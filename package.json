@@ -1,0 +1,62 @@
+{
+  "scripts": {
+    "test": "./node_modules/cypress/bin/cypress run",
+    "cypress:open": "cypress open"
+  },
+  "devDependencies": {
+    "@bahmutov/cypress-extends": "^1.1.0",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "@percy/cli": "^1.0.0-beta.52",
+    "@percy/cypress": "^3.1.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-plugin-stripe-elements": "^1.0.1",
+    "cypress-slack-reporter": "^1.2.1",
+    "cypress-social-logins": "^1.11.2",
+    "cypress-terminal-report": "^4.1.2",
+    "docolatte": "^2.10.2",
+    "eslint": "^8.10.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.1",
+    "mochawesome-report-generator": "^6.2.0",
+    "path": "^0.12.7",
+    "resolve": "^1.22.1",
+    "stream": "^0.0.2"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^12.0.1",
+    "@cucumber/cucumber": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "aws-sdk": "^2.932.0",
+    "axios": "^0.27.2",
+    "clean-jsdoc-theme": "^3.3.1",
+    "commander": "^7.2.0",
+    "cypress": "^10.6.0",
+    "cypress-commands": "^1.1.0",
+    "cypress-real-events": "^1.7.1",
+    "cypress-waitfor": "^1.1.0",
+    "dayjs": "^1.10.4",
+    "express": "^4.18.1",
+    "jira-client-xray": "^1.0.1",
+    "jsdoc-cypress-cucumber-plugin": "^1.1.0",
+    "lodash": "^4.17.21",
+    "luxon": "^1.26.0",
+    "mocha": "^10.0.0",
+    "mongodb": "^4.7.0",
+    "namecase": "^1.1.2",
+    "prettier": "^2.5.1",
+    "prettier-eslint": "^13.0.0",
+    "ts-loader": "^9.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "nonGlobalStepBaseDir": "./e2e/stepDefinitions/**",
+    "stepDefinitions": "./e2e/stepDefinitions/**",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}
