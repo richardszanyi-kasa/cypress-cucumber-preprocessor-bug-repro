@@ -3,6 +3,7 @@ import dayjs from "dayjs";
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
 import { utils } from "../../support/helpers/utils";
+
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -24,6 +25,7 @@ describe('some scenario', () => {
     
     if(utils.isBoolean('true')){
     utils.openAnotherWebpage('https://google.com');
+    utils.getProvider();
     };
   })
 })

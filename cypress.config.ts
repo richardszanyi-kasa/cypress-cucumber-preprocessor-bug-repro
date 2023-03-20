@@ -28,7 +28,6 @@ export default defineConfig({
       './e2e/features/**/*.{feature,features,ts}',
     ],
     baseUrl: 'https://google.com',
-    experimentalSessionAndOrigin: true,
     supportFile: false,
     setupNodeEvents,
     env: {
@@ -40,14 +39,14 @@ export default defineConfig({
 
 async function setupNodeEvents(on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions) : Promise<Cypress.PluginConfigOptions> {
   let testStore: any = {};
-
+  
+  await addCucumberPreprocessorPlugin(on, config);
   on(
     'file:preprocessor',
     browserify(config, {
       typescript: require.resolve('typescript'),
     })
   );
-  await addCucumberPreprocessorPlugin(on, config);
   
   require('cypress-terminal-report/src/installLogsPrinter')(on, {
     printLogsToConsole: 'onFail',

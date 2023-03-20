@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
+import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
-import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 
 dayjs.extend(timezone);
 dayjs.extend(utc);
@@ -13,6 +13,10 @@ export class Utils {
   }
 
   isBoolean = (value: string) => value == 'true' ? true : false;
+
+  getProvider() {
+    return cy.wrap(fromNodeProviderChain());
+  }
 
 
 }
